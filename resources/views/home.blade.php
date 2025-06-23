@@ -54,10 +54,10 @@
       </div>
     </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="nav-link" href="home.html">Home</a>
-<a class="nav-link" href="beasiswa.html">Beasiswa</a>
-<a class="nav-link" href="aboutus.html">About Us</a>
-<a class="nav-link" href="contact.html">Contact</a>
+<a class="nav-link" href="{{ url('/home') }}">Home</a>
+<a class="nav-link" href="{{ url('/beasiswa') }}">Beasiswa</a>
+<a class="nav-link" href="{{ url('/about') }}">About Us</a>
+<a class="nav-link" href="{{ url('/contact') }}">Contact</a>
 </nav>
 <div class="flex items-center gap-3">
 <button class="cta-button-primary hidden sm:flex"><span class="truncate">Login</span></button>
@@ -76,8 +76,8 @@
                 Sibeasiswaku membantu siswa mendapatkan informasi dan melamar beasiswa secara online dengan cepat dan transparan
               </p>
 <div class="mt-10 flex flex-wrap justify-center gap-4">
-<button class="cta-button-primary !h-12 !px-6 !text-base"><a href="beasiswa.html">Lihat Beasiswa</a><span class="truncate"></span></button>
-<button class="cta-button-secondary !h-12 !px-6 !text-base !bg-white/90 hover:!bg-white"><span class="truncate">Daftar Sekarang</span></button>
+<button class="cta-button-primary !h-12 !px-6 !text-base"><a href="{{ url('/beasiswa') }}">Lihat Beasiswa</a><span class="truncate"></span></button>
+<button class="cta-button-secondary !h-12 !px-6 !text-base !bg-white/90 hover:!bg-white"><span class="truncate"><a href="{{ url('/formpendaftaran') }}">Daftar Sekarang</a></span></button>
 </div>
 </div>
 </section>
@@ -152,7 +152,7 @@
                       Torik Halilintar, Arts Student
                     </p>
 </div>
-<div class="testimonial-card"> 
+<div class="testimonial-card">
 <div class="w-full h-48 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbz_k1RZ5m_NofqcgcNLdiQg8zZo87w0rEgtFNjyDoaGpDGv83X7bNN_66_CcyUas_9hjx7ec5TE5ly2vnUNsKILsQ5cAeMNZba2tLgzYkBNfVQJfKlSDvim1PvBsPSAlk5Tcjzb4fsQ2NKdz7BdOMh6sRae0DtfHkB91Mxsc5xFJGqGxFTG3JztPh55TLlpSYCjGwCrtm8O9dj5itfg83fuBatt17tGR6sgNJ-w3nDDgGTSZXTlex_0o7szUv1vBSdEbfBQdCMGiP");'></div>
 <blockquote class="mt-2">
 <p class="text-[var(--text-primary)] text-base font-medium leading-relaxed">

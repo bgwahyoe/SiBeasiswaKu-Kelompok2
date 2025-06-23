@@ -26,12 +26,12 @@
         <div class="text-[var(--primary-color)] text-2xl font-bold">🎓</div>
         <h1 class="font-bold text-xl">Sibeasiswaku</h1>
       </div>
-      <nav class="hidden md:flex gap-6 text-sm text-[var(--text-secondary)]">
-        <a href="home.html" class="hover:text-[var(--primary-color)]">Home</a>
-        <a href="home.html" class="hover:text-[var(--primary-color)]">Beasiswa</a>
-        <a href="#about" class="hover:text-[var(--primary-color)]">About</a>
-        <a href="#contact" class="hover:text-[var(--primary-color)]">Contact</a>
-      </nav>
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="nav-link" href="{{ url('/home') }}">Home</a>
+        <a class="nav-link" href="{{ url('/beasiswa') }}">Beasiswa</a>
+        <a class="nav-link" href="{{ url('/about') }}">About Us</a>
+        <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+    </nav>
       <a href="login.html" class="bg-[var(--primary-color)] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90">Login</a>
     </div>
   </header>

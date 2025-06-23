@@ -58,11 +58,11 @@
       </div>
     </div>
 </div>
-<nav class="hidden md:flex items-center gap-6">
-<a class="nav-link" href="home.html">Home</a>
-<a class="nav-link" href="beasiswa.html">Beasiswa</a>
-<a class="nav-link" href="aboutus.html">About Us</a>
-<a class="nav-link text-[var(--primary-color)] font-semibold" href="contact.html">Contact</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link" href="{{ url('/home') }}">Home</a>
+<a class="nav-link" href="{{ url('/beasiswa') }}">Beasiswa</a>
+<a class="nav-link" href="{{ url('/about') }}">About Us</a>
+<a class="nav-link" href="{{ url('/contact') }}">Contact</a>
 </nav>
 <div class="flex items-center gap-4">
 <button class="btn-primary">
