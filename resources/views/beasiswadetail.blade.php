@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,9 +16,13 @@
       --background-white: #ffffff;
       --border-light: #e5e7eb;
     }
+    .nav-link {
+      @apply text-[var(--text-primary)] text-sm font-medium hover:text-[var(--primary-color)] transition;
+    }
   </style>
 </head>
 <body class="bg-[var(--background-light)] text-[var(--text-primary)]">
+
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -31,32 +35,37 @@
         <a class="nav-link" href="{{ url('/beasiswa') }}">Beasiswa</a>
         <a class="nav-link" href="{{ url('/about') }}">About Us</a>
         <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
-    </nav>
-      <a href="login.html" class="bg-[var(--primary-color)] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90">Login</a>
+      </nav>
+      <a href="{{ url('/login') }}" class="bg-[var(--primary-color)] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90">Login</a>
     </div>
   </header>
 
   <!-- Detail Section -->
   <main class="py-16 px-4 md:px-8 bg-[var(--background-white)]">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold mb-4">Beasiswa Prestasi Akademik 2025</h2>
-      <p class="text-[var(--text-secondary)] mb-6 text-lg">Dibuka oleh: <span class="font-semibold text-[var(--text-primary)]">Universitas Teknologi Nusantara</span></p>
+      <!-- Gambar Beasiswa -->
+      <div class="mb-8">
+        <img src="{{ asset('img/beasiswa_quran.png') }}" alt="Beasiswa Tahfidz Al-Qur’an" class="w-full h-auto object-contain rounded-lg shadow-sm">
+      </div>
+
+      <h2 class="text-3xl font-bold mb-4">Beasiswa Tahfidz Al-Qur’an 2025</h2>
+      <p class="text-[var(--text-secondary)] mb-6 text-lg">Dibuka oleh: <span class="font-semibold text-[var(--text-primary)]">Yayasan Pendidikan Islam Terpadu Indonesia</span></p>
 
       <div class="grid md:grid-cols-2 gap-8 mb-8">
         <div>
           <h3 class="text-xl font-semibold mb-2">Deskripsi</h3>
           <p class="text-[var(--text-secondary)] leading-relaxed">
-            Beasiswa ini ditujukan untuk mahasiswa berprestasi dengan IPK minimal 3.50 dan aktif di organisasi kampus. Penerima beasiswa akan mendapatkan bantuan biaya kuliah sebesar Rp6.000.000 per semester selama dua semester.
+            Beasiswa Tahfidz Al-Qur’an merupakan program bantuan pendidikan bagi mahasiswa yang memiliki hafalan Al-Qur’an minimal 5 juz. Program ini bertujuan untuk mendukung para penghafal Al-Qur’an agar dapat menempuh pendidikan tinggi tanpa hambatan finansial.
           </p>
         </div>
         <div>
           <h3 class="text-xl font-semibold mb-2">Persyaratan</h3>
           <ul class="list-disc list-inside text-[var(--text-secondary)] space-y-1">
-            <li>IPK minimal 3.50</li>
-            <li>Mahasiswa aktif semester 3–6</li>
-            <li>Surat rekomendasi dari dosen pembimbing</li>
+            <li>Hafalan minimal 5 Juz Al-Qur’an</li>
+            <li>Mahasiswa aktif semester 1–6</li>
+            <li>Surat rekomendasi dari ustadz/pembina tahfidz</li>
+            <li>Mengikuti tes tahfidz dan wawancara</li>
             <li>Scan Kartu Tanda Mahasiswa (KTM)</li>
-            <li>Esai motivasi maksimal 500 kata</li>
           </ul>
         </div>
       </div>
@@ -65,9 +74,10 @@
         <div>
           <h3 class="text-xl font-semibold mb-2">Benefit</h3>
           <ul class="list-disc list-inside text-[var(--text-secondary)] space-y-1">
-            <li>Biaya kuliah ditanggung Rp6.000.000 / semester</li>
+            <li>Bebas biaya kuliah penuh hingga semester 8</li>
+            <li>Program pembinaan tahfidz dan karakter</li>
+            <li>Asrama khusus tahfidz (jika tersedia)</li>
             <li>Sertifikat penghargaan</li>
-            <li>Kesempatan menjadi ambassador kampus</li>
           </ul>
         </div>
         <div>
@@ -75,14 +85,15 @@
           <ul class="text-[var(--text-secondary)]">
             <li>Pendaftaran Dibuka: <strong>1 Juli 2025</strong></li>
             <li>Pendaftaran Ditutup: <strong>15 Agustus 2025</strong></li>
+            <li>Ujian Tahfidz: <strong>18 Agustus 2025</strong></li>
             <li>Pengumuman: <strong>25 Agustus 2025</strong></li>
           </ul>
         </div>
       </div>
 
       <div class="mt-10 flex justify-between items-center">
-        <a href="home.html" class="text-[var(--primary-color)] hover:underline text-sm">&larr; Kembali ke daftar beasiswa</a>
-        <a href="form_pendaftaran.html" class="bg-[var(--primary-color)] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-opacity-90">Daftar Sekarang</a>
+        <a href="{{ url('/beasiswa') }}" class="text-[var(--primary-color)] hover:underline text-sm">&larr; Kembali ke daftar beasiswa</a>
+        <a href="{{ url('/formpendaftaran') }}" class="bg-[var(--primary-color)] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-opacity-90">Daftar Sekarang</a>
       </div>
     </div>
   </main>
@@ -93,5 +104,6 @@
       © 2025 Sibeasiswaku. All rights reserved.
     </div>
   </footer>
+
 </body>
 </html>

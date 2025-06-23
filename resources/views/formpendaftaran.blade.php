@@ -99,7 +99,7 @@
     </form>
 
     <!-- Tombol Kembali -->
-    <a href="beasiswa-detail.html" class="back-link">← Kembali ke Detail Beasiswa</a>
+    <a href="{{ url('/beasiswa') }}" class="back-link">← Kembali ke Detail Beasiswa</a>
   </div>
 </body>
 </html>
