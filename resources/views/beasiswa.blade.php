@@ -57,6 +57,9 @@
   <!-- Main Content -->
   <main class="container mx-auto px-6 py-12">
     <h1 class="text-3xl font-bold mb-6 text-center">Daftar Beasiswa Tersedia</h1>
+    <p class="text-center text-[var(--text-secondary)] mb-8">
+    Temukan berbagai peluang beasiswa yang bisa kamu daftar. Klik "Lihat Detail" untuk mengetahui syarat, benefit, dan jadwal penting masing-masing beasiswa.
+  </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       
       <!-- Beasiswa 1 -->
