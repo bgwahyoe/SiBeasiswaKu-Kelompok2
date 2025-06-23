@@ -84,7 +84,7 @@
 <section class="py-16 md:py-24 bg-slate-100">
 <div class="container mx-auto px-6">
 <h2 class="section-title">Fitur Utama</h2>
-<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mx-auto">
 <div class="feature-card">
 <div class="text-[var(--primary-color)] p-3 bg-blue-100 rounded-full">
 <svg fill="currentColor" height="32px" viewBox="0 0 256 256" width="32px" xmlns="http://www.w3.org/2000/svg">
