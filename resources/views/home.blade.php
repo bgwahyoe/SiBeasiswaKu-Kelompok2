@@ -76,8 +76,8 @@
                 Sibeasiswaku membantu siswa mendapatkan informasi dan melamar beasiswa secara online dengan cepat dan transparan
               </p>
 <div class="mt-10 flex flex-wrap justify-center gap-4">
-<button class="cta-button-primary !h-12 !px-6 !text-base"><a href="beasiswa.html">Lihat Beasiswa</a><span class="truncate"></span></button>
-<button class="cta-button-secondary !h-12 !px-6 !text-base !bg-white/90 hover:!bg-white"><span class="truncate">Daftar Sekarang</span></button>
+<button class="cta-button-primary !h-12 !px-6 !text-base"><a href="{{ url('/beasiswa') }}">Lihat Beasiswa</a><span class="truncate"></span></button>
+<button class="cta-button-secondary !h-12 !px-6 !text-base !bg-white/90 hover:!bg-white"><span class="truncate"><a href="{{ url('/formpendaftaran') }}">Daftar Sekarang</a></span></button>
 </div>
 </div>
 </section>

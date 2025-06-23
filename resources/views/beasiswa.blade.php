@@ -79,8 +79,8 @@
           <p class="text-sm font-medium text-slate-600">Deadline: 15 Juli 2025</p>
         </div>
         <div class="mt-4 flex justify-between items-center">
-          <a href="beasiswa-detail.html" class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
-          <button class="cta-button-primary text-sm"><a href="form_pendaftaran.html">Daftar</a></button>
+          <a href="{{ url('/beasiswadetail') }} class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
+          <button class="cta-button-primary text-sm"><a href="{{ url('/formpendaftaran') }}">Daftar</a></button>
         </div>
       </div>
 
@@ -92,8 +92,8 @@
           <p class="text-sm font-medium text-slate-600">Deadline: 20 Agustus 2025</p>
         </div>
         <div class="mt-4 flex justify-between items-center">
-          <a href="beasiswa-detail.html" class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
-          <button class="cta-button-primary text-sm"><a href="form_pendaftaran.html">Daftar</a></button>
+          <a href="{{ url('/beasiswadetail') }}" class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
+          <button class="cta-button-primary text-sm"><a href="{{ url('/formpendaftaran') }}">Daftar</a></button>
         </div>
       </div>
     </div>
@@ -110,8 +110,8 @@
           <p class="text-sm font-medium text-slate-600">Deadline: 30 Juni 2025</p>
         </div>
         <div class="mt-4 flex justify-between items-center">
-          <a href="beasiswa-detail.html" class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
-          <button class="cta-button-primary text-sm"><a href="form_pendaftaran.html">Daftar</a></button>
+          <a href="{{ url('/beasiswadetail') }}" class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
+          <button class="cta-button-primary text-sm"><a href="{{ url('/formpendaftaran') }}">Daftar</a></button>
         </div>
       </div>
 
@@ -123,8 +123,8 @@
           <p class="text-sm font-medium text-slate-600">Deadline: 15 Juli 2025</p>
         </div>
         <div class="mt-4 flex justify-between items-center">
-          <a href="beasiswa-detail.html" class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
-          <button class="cta-button-primary text-sm"><a href="form_pendaftaran.html">Daftar</a></button>
+          <a href="{{ url('/beasiswadetail') }}" class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
+          <button class="cta-button-primary text-sm"><a href="{{ url('/formpendaftaran') }}">Daftar</a></button>
         </div>
       </div>
 
@@ -136,8 +136,8 @@
           <p class="text-sm font-medium text-slate-600">Deadline: 20 Agustus 2025</p>
         </div>
         <div class="mt-4 flex justify-between items-center">
-          <a href="beasiswa-detail.html" class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
-          <button class="cta-button-primary text-sm"><a href="form_pendaftaran.html">Daftar</a></button>
+          <a href="{{ url('/beasiswadetail') }}" class="text-[var(--primary-color)] text-sm font-medium hover:underline">Lihat Detail</a>
+          <button class="cta-button-primary text-sm"><a href="{{ url('/formpendaftaran') }}">Daftar</a></button>
         </div>
       </div>
     </div>
