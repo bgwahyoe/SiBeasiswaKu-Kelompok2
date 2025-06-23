@@ -60,7 +60,7 @@
 <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
 </nav>
 <div class="flex items-center gap-3">
-<button class="cta-button-primary hidden sm:flex"><span class="truncate">Login</span></button>
+<button class="cta-button-primary hidden sm:flex"><a href="{{ route('login') }}">Login</a><span class="truncate"></span></button>
 <button class="cta-button-secondary"><span class="truncate">Register</span></button>
 <button class="md:hidden text-[var(--text-primary)] p-2">
 <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,88H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
