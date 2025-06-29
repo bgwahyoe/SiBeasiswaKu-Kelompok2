@@ -64,31 +64,8 @@
 <body>
   <div class="container">
     <h2>Form Pendaftaran Beasiswa</h2>
-    <form action="#" method="POST" enctype="multipart/form-data">
-      
-      <label for="nama">Nama Lengkap</label>
-      <input type="text" id="nama" name="nama" required>
-
-      <label for="tanggal_lahir">Tanggal Lahir</label>
-      <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
-      
-      <label for="sekolah">Asal Sekolah</label>
-      <input type="text" id="sekolah" name="sekolah" required>
-
-      <label for="domisili">Domisili</label>
-      <input type="text" id="domisili" name="domisili" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="beasiswa">Pilih Beasiswa</label>
-      <select id="beasiswa" name="beasiswa" required>
-        <option value="">-- Pilih Beasiswa --</option>
-        <option value="akademik">Beasiswa Akademik</option>
-        <option value="non-akademik">Beasiswa Non-Akademik</option>
-        <option value="prestasi">Beasiswa KIPK</option>
-      </select>
-
+    <form action="{{route('pendaftaran', ['id' => $id])}}" method="POST" enctype="multipart/form-data">
+      @csrf
       <label for="berkas">Upload Berkas (PDF)</label>
       <input type="file" id="berkas" name="berkas" accept=".pdf" required>
 

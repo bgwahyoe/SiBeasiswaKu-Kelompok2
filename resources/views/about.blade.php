@@ -39,51 +39,8 @@
       class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
     >
       <div class="layout-container flex h-full grow flex-col">
-        <header
-          class="sticky top-0 z-50 bg-[var(--background-white)] shadow-md"
-        >
-          <div
-            class="container mx-auto flex items-center justify-between whitespace-nowrap px-6 py-4"
-          >
-            <div class="flex items-center gap-3 text-[var(--text-primary)]">
-              <div class="flex items-center gap-3">
-              <div class="size-7 text-[var(--primary-color)]">
-                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                </svg>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="text-[var(--primary-color)] text-2xl font-bold">🎓</div>
-                <h1 class="font-bold text-xl">Sibeasiswaku</h1>
-              </div>
-            </div>
-            </div>
-            <nav class="hidden md:flex items-center gap-8">
-                <a class="nav-link" href="{{ url('/home') }}">Home</a>
-                <a class="nav-link" href="{{ url('/beasiswa') }}">Beasiswa</a>
-                <a class="nav-link" href="{{ url('/about') }}">About Us</a>
-                <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
-            </nav>
-            <button
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors"
-            >
-              <span class="truncate">Login</span>
-            </button>
-            <button class="md:hidden text-[var(--text-primary)]">
-              <svg
-                fill="currentColor"
-                height="24"
-                viewBox="0 0 256 256"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,88H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </header>
-        <main class="flex-1">
+        @include('components.header')
+        <main class="flex-1 my-24">
           <section
             class="hero-gradient flex min-h-[calc(100vh-80px)] items-center justify-center bg-cover bg-center py-16 px-4 md:py-24"
             id="hero"
@@ -469,44 +426,8 @@
             </div>
           </section>
         </main>
-        <footer
-          class="bg-[var(--background-white)] border-t border-[var(--border-light)] py-10"
-        >
-          <div class="container mx-auto px-6">
-            <div
-              class="flex flex-col items-center justify-center gap-6 text-center md:flex-row md:justify-around"
-            >
-              <a
-                class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] text-sm font-medium leading-normal transition-colors"
-                href="#"
-                >Home</a
-              >
-              <a
-                class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] text-sm font-medium leading-normal transition-colors"
-                href="#about"
-                >About</a
-              >
-              <a
-                class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] text-sm font-medium leading-normal transition-colors"
-                href="#contact"
-                >Contact</a
-              >
-              <a
-                class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] text-sm font-medium leading-normal transition-colors"
-                href="#"
-                >Privacy Policy</a
-              >
-              <a
-                class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] text-sm font-medium leading-normal transition-colors"
-                href="#"
-                >Terms of Service</a
-              >
-            </div>
-            <p class="mt-8 text-center text-sm text-[var(--text-secondary)]">
-              © 2024 Sibeasiswaku. All rights reserved.
-            </p>
-          </div>
-        </footer>
+        @component('components.footer')
+        @endcomponent
       </div>
     </div>
   </body>

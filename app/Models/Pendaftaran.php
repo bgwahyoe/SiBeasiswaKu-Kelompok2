@@ -10,9 +10,11 @@ class Pendaftaran extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 
-        'beasiswa_id', 
-        'status'
+        'user_id',
+        'beasiswa_id',
+        'status',
+        'berkas',
+        'motivasi'
     ];
 
     public function user()
@@ -29,4 +31,6 @@ class Pendaftaran extends Model
     {
         return $this->hasMany(Dokumen::class);
     }
+
+
 }

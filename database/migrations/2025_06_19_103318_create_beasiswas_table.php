@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('beasiswas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('gambar');
             $table->text('deskripsi');
             $table->date('batas_akhir');
-            $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
+            $table->string('penyedia');
             $table->timestamps();
         });
     }

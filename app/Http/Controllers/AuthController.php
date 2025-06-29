@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -20,8 +23,11 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
+            if (Auth::user()->role === 'admin') {
+                return redirect()->intended('/admin'); // arahkan ke dashboard
+            }
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard'); // arahkan ke dashboard
+            return redirect()->intended('/home'); // arahkan ke dashboard
         }
 
         return back()->withErrors([
@@ -37,6 +43,37 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/login');
+    }
+
+        public function showRegisterForm()
+    {
+        return view('auth.register');
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|confirmed|min:6',
+            'tgl_lahir' => 'required|date',
+            'sekolah' => 'required|string',
+            'domisili' => 'required|string',
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 'user', // default role untuk frontend user
+            'tgl_lahir' => $request->tgl_lahir,
+            'sekolah' => $request->sekolah,
+            'domisili' => $request->domisili
+        ]);
+
+        Auth::login($user); // langsung login setelah register
+
+        return redirect('/home');
     }
 }
 

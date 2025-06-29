@@ -10,10 +10,11 @@ class Beasiswa extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama', 
-        'deskripsi', 
-        'batas_akhir', 
-        'created_by'
+        'nama',
+        'deskripsi',
+        'batas_akhir',
+        'penyedia',
+        'gambar',
     ];
 
     public function creator()

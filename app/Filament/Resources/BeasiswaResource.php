@@ -10,6 +10,8 @@ use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -33,7 +35,15 @@ class BeasiswaResource extends Resource
                 ->required()
                 ->maxLength(255),
 
-            Textarea::make('deskripsi')
+            FileUpload::make('gambar')
+                ->label('Gambar')
+                ->disk('public')
+                ->directory('beasiswa')
+                ->image()
+                ->required(),   
+
+
+            RichEditor::make('deskripsi')
                 ->label('Deskripsi')
                 ->required()
                 ->columnSpanFull(),
@@ -42,11 +52,8 @@ class BeasiswaResource extends Resource
                 ->label('Batas Akhir')
                 ->required(),
 
-            Select::make('created_by')
-                ->label('Dibuat Oleh')
-                ->relationship('creator', 'name') // pastikan di model Beasiswa ada relasi creator()
-                ->searchable()
-                ->preload()
+            TextInput::make('penyedia')
+                ->label('Penyelenggara Beasiswa')
                 ->required(),
         ]);
     }
