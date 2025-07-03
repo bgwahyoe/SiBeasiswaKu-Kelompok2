@@ -7,8 +7,11 @@
   <link rel="icon" href="{{ asset('img/sibeasiswaku.png') }}">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body { font-family: 'Public Sans', sans-serif; }
+
+  {{-- WAJIB ADA: Alpine.js untuk interaktivitas menu di header --}}
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style type="text/tailwindcss">
     :root {
       --primary-color: #0c7ff2;
       --text-primary: #111827;
@@ -17,86 +20,58 @@
       --background-white: #ffffff;
       --border-light: #e5e7eb;
     }
+
+    body {
+      font-family: 'Public Sans', sans-serif;
+      /* PERBAIKAN 1: Beri ruang di atas untuk header yang fixed */
+      padding-top: 68px;
+    }
+
     .nav-link {
       @apply text-[var(--text-primary)] text-sm font-medium hover:text-[var(--primary-color)] transition;
     }
 
-    .konten-html h2 {
-    font-size: 1.5em; /* 24px */
-    font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.konten-html h3 {
-    font-size: 1.25em; /* 20px */
-    font-weight: 600;
-    margin-top: 1.25rem;
-    margin-bottom: 0.75rem;
-}
-
-.konten-html p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.konten-html strong {
-    font-weight: 700;
-}
-
-.konten-html a {
-    color: #3b82f6; /* Biru */
-    text-decoration: underline;
-}
-
-.konten-html ul {
-    list-style-type: disc;
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.konten-html ol {
-    list-style-type: decimal;
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.konten-html li {
-    margin-bottom: 0.5rem;
-}
+    /* Styling untuk konten dari database (WYSIWYG Editor) */
+    .konten-html h2 { @apply text-2xl font-semibold mt-6 mb-4; }
+    .konten-html h3 { @apply text-xl font-semibold mt-5 mb-3; }
+    .konten-html p { @apply mb-4 leading-relaxed; }
+    .konten-html strong { @apply font-bold; }
+    .konten-html a { @apply text-blue-600 underline; }
+    .konten-html ul { @apply list-disc pl-5 mb-4; }
+    .konten-html ol { @apply list-decimal pl-5 mb-4; }
+    .konten-html li { @apply mb-2; }
   </style>
 </head>
 <body class="bg-[var(--background-light)] text-[var(--text-primary)]">
 
-  <!-- Header -->
+  {{-- Pastikan Anda menggunakan file header.blade.php yang sudah diperbaiki dari jawaban sebelumnya --}}
   @include('components.header')
 
-  <!-- Detail Section -->
-  <main class="py-16 px-4 md:px-8 bg-[var(--background-white)]">
-    <div class="max-w-4xl mx-auto" >
-      <!-- Gambar Beasiswa -->
+  {{-- PERBAIKAN 2: Tambahkan class 'relative z-10' untuk memastikan konten berada di bawah header (z-40) --}}
+  <main class="py-12 md:py-16 px-4 md:px-8 bg-[var(--background-white)] relative z-10">
+    <div class="max-w-4xl mx-auto">
+
       <div class="mb-8">
-        <img src="{{ asset('storage/' . $bsw->gambar) }}" alt='{{ $bsw->nama }}' class="w-full h-auto object-contain rounded-lg shadow-sm">
+        <img src="{{ asset('storage/' . $bsw->gambar) }}" alt='{{ $bsw->nama }}' class="w-full h-auto max-h-[400px] object-cover rounded-lg shadow-lg border border-[var(--border-light)]">
       </div>
 
-      <h2 class="text-3xl font-bold mb-4">{{$bsw->nama}}</h2>
-      <p class="text-[var(--text-secondary)] mb-6 text-lg">Dibuka oleh: <span class="font-semibold text-[var(--text-primary)]">{{$bsw->penyedia}}</span></p>
+      <h1 class="text-3xl md:text-4xl font-bold mb-3 text-[var(--text-primary)]">{{$bsw->nama}}</h1>
+      <p class="text-[var(--text-secondary)] mb-8 text-base">Dibuka oleh: <span class="font-semibold text-[var(--text-primary)]">{{$bsw->penyedia}}</span></p>
 
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <div class="konten-html">
-                {!! $bsw->deskripsi !!}
-            </div>
+      <div class="prose max-w-none text-[var(--text-secondary)] konten-html">
+        {!! $bsw->deskripsi !!}
       </div>
 
-      <div class="mt-10 flex justify-between items-center">
-        <a href="{{ url('/beasiswa') }}" class="text-[var(--primary-color)] hover:underline text-sm">&larr; Kembali ke daftar beasiswa</a>
-        <a href="{{ url('/formpendaftaran/' . $bsw->id) }}" class="bg-[var(--primary-color)] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-opacity-90">Daftar Sekarang</a>
+      <div class="mt-10 pt-6 border-t border-[var(--border-light)] flex flex-col sm:flex-row justify-between items-center gap-4">
+        <a href="{{ url('/beasiswa') }}" class="text-[var(--primary-color)] font-medium hover:underline text-sm">&larr; Kembali ke daftar beasiswa</a>
+        <a href="{{ url('/formpendaftaran/' . $bsw->id) }}" class="w-full sm:w-auto bg-[var(--primary-color)] text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors">
+          Daftar Sekarang
+        </a>
       </div>
     </div>
   </main>
 
-  @component('components.footer')
-  @endcomponent
+  @include('components.footer')
 
 </body>
 </html>
