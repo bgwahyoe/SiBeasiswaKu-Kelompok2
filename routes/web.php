@@ -11,6 +11,7 @@ use App\Http\Middleware\RedirectIfAdmin;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Auth;
 
+
 // Halaman Umum
 Route::get('/', fn() => view('/auth/login'));
 Route::get('/home', fn() => view('home'));
@@ -34,5 +35,4 @@ Route::post('/pendaftaran/{id}', [PendaftaranBeasiswa::class, 'daftar'])->name('
 
 
  Route::get('/user/dashboard', [DashboardController::class, 'index'])->middleware(Authenticate::class,RedirectIfAdmin::class);
-
 

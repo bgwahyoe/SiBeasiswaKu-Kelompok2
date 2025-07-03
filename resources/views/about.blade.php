@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <title>Sibeasiswaku - About Us</title>
+    <link rel="icon" href="{{ asset('img/sibeasiswaku.png') }}">
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
@@ -425,6 +426,70 @@
               </div>
             </div>
           </section>
+
+            <section class="py-16 px-4 md:py-24 bg-[var(--background-white)]" id="team">
+            <div class="container mx-auto max-w-5xl">
+                <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[var(--text-primary)] tracking-tight md:text-4xl">
+                    Kenali Tim Kami
+                </h2>
+                <p class="mt-4 text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
+                    Kami adalah sekelompok individu yang bersemangat dalam menciptakan solusi inovatif. Temui orang-orang di balik Sibeasiswaku.
+                </p>
+                </div>
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="flex flex-col items-center text-center p-6 rounded-xl border border-[var(--border-light)] bg-[var(--background-light)] shadow-sm hover:shadow-lg transition-shadow">
+                    <img class="size-24 rounded-full mb-4 object-cover" src={{asset('img/1.jpg')}} alt="Foto Anggota Tim 1">
+                    <h3 class="text-xl font-bold text-[var(--text-primary)]">Wahyu Ahmad Yassin</h3>
+                    <p class="text-[var(--primary-color)] font-semibold">Project Manager</p>
+                    <p class="mt-2 text-sm text-[var(--text-secondary)]">
+                    Bertanggung jawab atas perencanaan dan eksekusi proyek untuk memastikan semua berjalan sesuai jadwal.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 rounded-xl border border-[var(--border-light)] bg-[var(--background-light)] shadow-sm hover:shadow-lg transition-shadow">
+                    <img class="size-24 rounded-full mb-4 object-cover" src={{asset('img/2.jpg')}} alt="Foto Anggota Tim 2">
+                    <h3 class="text-xl font-bold text-[var(--text-primary)]">Muhammad Fajrul Falah</h3>
+                    <p class="text-[var(--primary-color)] font-semibold">Lead Developer</p>
+                    <p class="mt-2 text-sm text-[var(--text-secondary)]">
+                    Membangun dan memelihara sisi server, database, dan logika aplikasi yang kuat untuk platform kami.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 rounded-xl border border-[var(--border-light)] bg-[var(--background-light)] shadow-sm hover:shadow-lg transition-shadow">
+                    <img class="size-24 rounded-full mb-4 object-cover" src={{asset('img/3.jpg')}} alt="Foto Anggota Tim 3">
+                    <h3 class="text-xl font-bold text-[var(--text-primary)]">Abiyan Abdulrohman</h3>
+                    <p class="text-[var(--primary-color)] font-semibold">UI/UX Designer</p>
+                    <p class="mt-2 text-sm text-[var(--text-secondary)]">
+                    Merancang antarmuka yang intuitif dan pengalaman pengguna yang menyenangkan di Sibeasiswaku.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 rounded-xl border border-[var(--border-light)] bg-[var(--background-light)] shadow-sm hover:shadow-lg transition-shadow">
+                    <img class="size-24 rounded-full mb-4 object-cover" src={{asset('img/4.jpg')}} alt="Foto Anggota Tim 4">
+                    <h3 class="text-xl font-bold text-[var(--text-primary)]">Muhammad Thoriq Al Fath</h3>
+                    <p class="text-[var(--primary-color)] font-semibold">Backend Developer</p>
+                    <p class="mt-2 text-sm text-[var(--text-secondary)]">
+                    Memimpin pengembangan teknis dan memastikan kualitas kode serta arsitektur sistem yang andal.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 rounded-xl border border-[var(--border-light)] bg-[var(--background-light)] shadow-sm hover:shadow-lg transition-shadow">
+                    <img class="size-24 rounded-full mb-4 object-cover" src={{asset('img/5.jpg')}} alt="Foto Anggota Tim 5">
+                    <h3 class="text-xl font-bold text-[var(--text-primary)]">M. Raisa Qisti Rayhan</h3>
+                    <p class="text-[var(--primary-color)] font-semibold">Frontend Developer</p>
+                    <p class="mt-2 text-sm text-[var(--text-secondary)]">
+                    Mengimplementasikan desain UI/UX ke dalam kode interaktif yang responsif dan mudah diakses pengguna.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 rounded-xl border border-[var(--border-light)] bg-[var(--background-light)] shadow-sm hover:shadow-lg transition-shadow">
+                    <img class="size-24 rounded-full mb-4 object-cover" src={{asset('img/6.jpg')}} alt="Foto Anggota Tim 6">
+                    <h3 class="text-xl font-bold text-[var(--text-primary)]">Angeliq Mexgaputri Premaswari</h3>
+                    <p class="text-[var(--primary-color)] font-semibold">Quality Assurance</p>
+                    <p class="mt-2 text-sm text-[var(--text-secondary)]">
+                    Memastikan platform berjalan tanpa bug dan sesuai standar kualitas melalui pengujian menyeluruh.
+                    </p>
+                </div>
+                </div>
+            </div>
+            </section>
+
         </main>
         @component('components.footer')
         @endcomponent

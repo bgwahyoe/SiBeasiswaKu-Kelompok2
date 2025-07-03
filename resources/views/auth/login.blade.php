@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sibeasiswaku</title>
+    <link rel="icon" href="{{ asset('img/sibeasiswaku.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -126,6 +128,11 @@
             border-color: #adb5bd;
         }
 
+        /* ADDED: Style for the toggle icon */
+        #togglePassword {
+            cursor: pointer;
+        }
+
         @media (max-width: 991.98px) {
             .image-section {
                 display: none;
@@ -163,7 +170,12 @@
 
                 <div class="mb-3">
                     <label for="password" class="form-label fw-medium">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Masukkan password" required>
+                    <div class="input-group">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Masukkan password" required>
+                        <span class="input-group-text" id="togglePassword">
+                            <i class="bi bi-eye-slash"></i>
+                        </span>
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -173,15 +185,11 @@
                             Ingat Saya
                         </label>
                     </div>
-                    
                 </div>
 
                 <button class="btn btn-primary w-100 mb-3" type="submit">Login</button>
 
                 <div class="divider my-3">atau</div>
-
-
-
             </form>
 
             <div class="text-center mt-4">
@@ -198,6 +206,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function (e) {
+        // Toggles the type attribute of the password input
+        const password = document.getElementById('password');
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        // Toggles the icon
+        const icon = this.querySelector('i');
+        icon.classList.toggle('bi-eye');
+        icon.classList.toggle('bi-eye-slash');
+    });
+</script>
 
 </body>
 </html>

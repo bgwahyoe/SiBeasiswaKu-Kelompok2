@@ -5,7 +5,8 @@
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Public+Sans%3Awght%40400%3B500%3B600%3B700%3B800%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
     <title>Sibeasiswaku - Scholarship Management</title>
-    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    {{-- <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/> --}}
+    <link rel="icon" href="{{ asset('img/sibeasiswaku.png') }}">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
         :root {
@@ -89,42 +90,51 @@
                 </div>
             </section>
             <section class="py-16 md:py-24 bg-[var(--background-light)]">
-                <div class="container mx-auto px-6">
-                    <h2 class="section-title">Apa Kata Mereka</h2>
-                    <div class="flex overflow-x-auto snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-4 -mx-6 px-6">
-                        <div class="flex items-stretch gap-6 snap-center">
-                            <div class="testimonial-card">
-                                <div class="w-full h-48 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBA7krKxHn42Gk4LJKeFer4VXwP7VeDU9rxzeaY6zi5ZnREiaovIYMAvI3WYnzbhWBDL0G8lXLfPvqSoaFgpe4aaRtrBGfR3iEwlipiVwofuYLqdsMvLmWwazWbEhsSIW8RvtdzM7ohZYxc2UpAPDcIbvZdAb27vxL673m-ErA4U78CfczAMB9-tvAKfVYiiSuAASAiFkJ1ZBbuUzBLpYqthdhgCcDCahfwZRvyebLk5Rcxu0VKFIs9WnXCS9CbRSkX1aDvRs7NCGMw");'></div>
-                                <blockquote class="mt-2">
-                                    <p class="text-[var(--text-primary)] text-base font-medium leading-relaxed">"Sibeasiswaku membuat pencarian dan pendaftaran beasiswa menjadi jauh lebih mudah."</p>
-                                </blockquote>
-                                <p class="text-[var(--text-secondary)] text-sm font-normal leading-normal mt-auto pt-2 border-t border-slate-200">Xabi Alonso, Coach Manager Student</p>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="w-full h-48 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXe1cuMxgzwMYJGxLwHDW-I_GNPmMZ6nSjN8MEFdu05Kj74Yn-E7NvS9wwjf8XLGa-QrVGHhHQ4Dne3yFpa01qSirNOVEuk-AEyAOSj1Q0SaYKaMW9rv03xEPjbb2oKNpzVeJIauAUMCWnOUST9dp7-Q2kWoSu7R3J5ciZBw8IHLpFRsCl5lXXhYtNPeKEl_IUtXQADhwEM42edrX9R5zjvO83XTHiheftxOnNRYed9ZGxQOhFJV0TWTB7ye7JBiatlff_tM8GmRNJ");'></div>
-                                <blockquote class="mt-2">
-                                    <p class="text-[var(--text-primary)] text-base font-medium leading-relaxed">"Aplikasi KELAZZZ dan nyampe."</p>
-                                </blockquote>
-                                <p class="text-[var(--text-secondary)] text-sm font-normal leading-normal mt-auto pt-2 border-t border-slate-200">Ole Romany, Profesional Football Student</p>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="w-full h-48 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRbip8gJRtt07pgzMaFQ8-2kvR5BSoeebiLx3EN9rDGkn0H_8S4Fu_yQPjZIj2g_7wI6HQ_1i7bpJ6uZg7AXhYmQJivJR3mz0JullCkVgT5WcNo5h_P4wBIaYcl0Z-gy6OJPBx_TeEGrkNgiRIqmBEvkwyDHLi7mG48TJZIkvFIzp_7N8rnPqhhCFuW4J17TmINrNL_f1RwDJBwrePpgiTd-zMvFR7mqIwvadpIyyn6cngpO_BIRKhTqiG-feyo7h8S4a1al1x6KHX");'></div>
-                                <blockquote class="mt-2">
-                                    <p class="text-[var(--text-primary)] text-base font-medium leading-relaxed">"Platform ini mudah digunakan dan menyediakan semua informasi yang diperlukan di satu tempat."</p>
-                                </blockquote>
-                                <p class="text-[var(--text-secondary)] text-sm font-normal leading-normal mt-auto pt-2 border-t border-slate-200">Torik Halilintar, Arts Student</p>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="w-full h-48 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbz_k1RZ5m_NofqcgcNLdiQg8zZo87w0rEgtFNjyDoaGpDGv83X7bNN_66_CcyUas_9hjx7ec5TE5ly2vnUNsKILsQ5cAeMNZba2tLgzYkBNfVQJfKlSDvim1PvBsPSAlk5Tcjzb4fsQ2NKdz7BdOMh6sRae0DtfHkB91Mxsc5xFJGqGxFTG3JztPh55TLlpSYCjGwCrtm8O9dj5itfg83fuBatt17tGR6sgNJ-w3nDDgGTSZXTlex_0o7szUv1vBSdEbfBQdCMGiP");'></div>
-                                <blockquote class="mt-2">
-                                    <p class="text-[var(--text-primary)] text-base font-medium leading-relaxed">"Platform yang fantastis! Sangat memudahkan pencarian beasiswa saya."</p>
-                                </blockquote>
-                                <p class="text-[var(--text-secondary)] text-sm font-normal leading-normal mt-auto pt-2 border-t border-slate-200">WAHIYU, CS Student</p>
-                            </div>
-                        </div>
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-[var(--text-primary)]">Apa Kata Mereka</h2>
+
+                <div class="flex flex-wrap justify-center gap-6 px-6">
+
+                <!-- Testimoni 1 -->
+                <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col w-80 min-w-[18rem] hover:shadow-lg transition-shadow duration-300 snap-center">
+                    <div class="w-full h-48 bg-center bg-cover rounded-xl mb-4" style="background-image: url('https://i.pravatar.cc/300?img=47');"></div>
+                    <blockquote class="flex-1">
+                    <p class="text-gray-700 text-base font-medium leading-relaxed italic">"Sibeasiswaku sangat membantu saya menemukan beasiswa yang sesuai dengan jurusan dan prestasi saya. Fitur pendaftaran yang mudah digunakan dan informasinya selalu terbaru."</p>
+                    </blockquote>
+                    <div class="mt-4 pt-4 border-t border-gray-200">
+                    <p class="text-gray-800 font-semibold">Amelia Putri</p>
+                    <p class="text-sm text-gray-500">Mahasiswa Akuntansi - Universitas Indonesia</p>
                     </div>
                 </div>
+
+                <!-- Testimoni 2 -->
+                <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col w-80 min-w-[18rem] hover:shadow-lg transition-shadow duration-300 snap-center">
+                    <div class="w-full h-48 bg-center bg-cover rounded-xl mb-4" style="background-image: url('https://i.pravatar.cc/300?img=12');"></div>
+                    <blockquote class="flex-1">
+                    <p class="text-gray-700 text-base font-medium leading-relaxed italic">"Awalnya saya bingung mencari beasiswa setelah lulus SMA. Tapi sejak pakai Sibeasiswaku, semua terasa jelas dan saya berhasil lolos."</p>
+                    </blockquote>
+                    <div class="mt-4 pt-4 border-t border-gray-200">
+                    <p class="text-gray-800 font-semibold">Muhammad Rizky</p>
+                    <p class="text-sm text-gray-500">Lulusan SMA – Penerima Beasiswa Prestasi</p>
+                    </div>
+                </div>
+
+                <!-- Testimoni 3 -->
+                <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col w-80 min-w-[18rem] hover:shadow-lg transition-shadow duration-300 snap-center">
+                    <div class="w-full h-48 bg-center bg-cover rounded-xl mb-4" style="background-image: url('https://i.pravatar.cc/300?img=32');"></div>
+                    <blockquote class="flex-1">
+                    <p class="text-gray-700 text-base font-medium leading-relaxed italic">"Platform ini memberikan arahan lengkap dalam proses pendaftaran. Sangat cocok untuk pelamar beasiswa riset seperti saya."</p>
+                    </blockquote>
+                    <div class="mt-4 pt-4 border-t border-gray-200">
+                    <p class="text-gray-800 font-semibold">Citra Ramadhani</p>
+                    <p class="text-sm text-gray-500">Mahasiswa Pascasarjana – Penerima Beasiswa Riset</p>
+                    </div>
+                </div>
+
+                </div>
+            </div>
             </section>
+
         </main>
         @component('components.footer')
         @endcomponent

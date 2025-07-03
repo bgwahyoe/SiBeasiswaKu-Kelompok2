@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <title>Sibeasiswaku - Contact Us</title>
+  <link rel="icon" href="{{ asset('img/sibeasiswaku.png') }}">
   <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
   <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Public+Sans%3Awght%40400%3B500%3B700%3B900" rel="stylesheet"/>
   <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
@@ -48,7 +49,9 @@
 <body class="bg-[var(--background-secondary)]">
   <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
     <div class="layout-container flex h-full grow flex-col">
+      {{-- Ganti bagian ini dengan kode header Anda jika ada --}}
       @include('components.header')
+
       <main class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-8 md:py-12 my-24">
         <div class="layout-content-container grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 max-w-6xl w-full">
           <section class="bg-[var(--background-primary)] p-6 sm:p-8 rounded-xl shadow-lg">
@@ -56,7 +59,8 @@
               <h1 class="text-[var(--text-primary)] tracking-tight text-3xl font-bold leading-tight mb-2">Hubungi kami</h1>
               <p class="text-[var(--text-secondary)] text-base font-normal leading-relaxed">Ada pertanyaan atau butuh bantuan? Isi formulir di bawah ini, dan kami akan segera menghubungi Anda.</p>
             </div>
-            <form class="space-y-6" action="#" method="POST">
+
+            <form class="space-y-6" id="contact-form">
               <div>
                 <label class="form-label" for="name">Name</label>
                 <input class="form-input" id="name" placeholder="Your Full Name" type="text" required/>
@@ -79,7 +83,7 @@
                 </button>
               </div>
             </form>
-          </section>
+            </section>
           <section class="space-y-8">
             <div class="bg-[var(--background-primary)] p-6 sm:p-8 rounded-xl shadow-lg">
               <h2 class="section-title mb-6">Campus Contact Information</h2>
@@ -122,9 +126,47 @@
           </section>
         </div>
       </main>
-      @component('components.footer')
-      @endcomponent
+
+      {{-- Ganti bagian ini dengan kode footer Anda jika ada --}}
+      {{-- @component('components.footer') --}}
+      {{-- @endcomponent --}}
     </div>
   </div>
-</body>
+
+  <script>
+    // 1. Ganti nomor ini dengan nomor WhatsApp Anda.
+    //    Gunakan format 62 (kode negara) diikuti nomor telepon (contoh: 6281234567890).
+    const whatsappNumber = "62895604849987"; // <--- GANTI NOMOR INI DENGAN NOMOR WA ANDA
+
+    // 2. Menambahkan event listener ke form saat disubmit
+    const contactForm = document.getElementById("contact-form");
+    contactForm.addEventListener("submit", function (event) {
+      // Mencegah form dari refresh halaman
+      event.preventDefault();
+
+      // 3. Mengambil nilai dari setiap input
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value;
+
+      // 4. Membuat format pesan untuk WhatsApp
+      // KODE BARU (BENAR)
+        const formattedMessage = `Halo Sibeasiswaku, saya ingin bertanya.
+
+        *Nama:* ${name}
+        *Email:* ${email}
+        *Subjek:* ${subject}
+
+        *Pesan:*
+        ${message}`;
+
+      // 5. Membuat URL WhatsApp
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(formattedMessage)}`;
+
+      // 6. Membuka WhatsApp di tab baru
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+  </body>
 </html>
