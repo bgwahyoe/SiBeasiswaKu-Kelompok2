@@ -128,8 +128,8 @@
       </main>
 
       {{-- Ganti bagian ini dengan kode footer Anda jika ada --}}
-      {{-- @component('components.footer') --}}
-      {{-- @endcomponent --}}
+      @component('components.footer')
+      @endcomponent
     </div>
   </div>
 
